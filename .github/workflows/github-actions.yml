@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} runs github-actions
 on:
   pull_request:
-  push: {branches: [main]}
+  push: { branches: [main] }
 
 jobs:
   studylog-ci:
@@ -12,8 +12,8 @@ jobs:
       - name: Nodeセットアップ
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.node-version'
-          cache: 'npm'
+          node-version-file: ".node-version"
+          cache: "npm"
       - run: npm ci
       - run: npm run format:check
       - run: npm run typecheck
